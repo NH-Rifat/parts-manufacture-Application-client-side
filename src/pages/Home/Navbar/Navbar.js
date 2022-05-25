@@ -25,6 +25,9 @@ const Navbar = () => {
       <li>
         <Link to='/blogs'>Blogs</Link>
       </li>
+      <li>
+        <Link to='/login'>Sign in</Link>
+      </li>
     </>
   );
   return (
