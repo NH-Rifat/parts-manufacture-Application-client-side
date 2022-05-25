@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SingleProduct = ({ product }) => {
   // console.log(product);
   const { name, image, des, minQuantity, available, price } = product;
+  const navigate = useNavigate();
   // console.log(name, image, des, minQuantity, available, price);
+  const handleOrder=(product)=>{
+    const productId = product._id;
+    // console.log('clicked',product._id);
+    navigate(`/purchase/${productId}`)
+  }
   return (
     <div class='card w-96 bg-base-100 shadow-xl'>
       <div class='card-body'>
@@ -21,7 +28,7 @@ const SingleProduct = ({ product }) => {
           <p className='ml-28 text-lg border border-slate-900 rounded-md text-center'>price: {price}$</p>
         </div>
         <p className=' mb-4'>{des ? des.slice(0, 100) : 'description not available'}</p>
-        <button className='btn btn-primary hover:bg-slate-800 hover:text-white'>Order Now</button>
+        <button className='btn btn-primary hover:bg-slate-800 hover:text-white' onClick={()=>handleOrder(product)}>Order Now</button>
       </div>
     </div>
   );
