@@ -4,7 +4,7 @@ import auth from '../../firebase.init';
 
 import { toast } from 'react-toastify';
 
-const OrderModal = ({ product, quantity,setModal }) => {
+const OrderModal = ({ product, quantity, setModal }) => {
   const [user, loading, error] = useAuthState(auth);
   // console.log('modal',product,user);
 
@@ -20,7 +20,9 @@ const OrderModal = ({ product, quantity,setModal }) => {
       userEmail: user?.email,
       userName: user?.displayName,
       phone,
-      address
+      address,
+      price:product?.price,
+      quantity
     };
     // console.log(order);
     fetch('http://localhost:5000/order', {
@@ -90,7 +92,6 @@ const OrderModal = ({ product, quantity,setModal }) => {
               value={quantity ? quantity : ''}
               className='input input-bordered w-full max-w-xs'
             />
-            
 
             <input
               type='text'
