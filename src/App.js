@@ -8,6 +8,7 @@ import OrderModal from './pages/Purchase/OrderModal';
 import Purchase from './pages/Purchase/Purchase';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
       </Routes>
 
 
