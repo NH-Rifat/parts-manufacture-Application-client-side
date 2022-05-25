@@ -28,7 +28,7 @@ const SingleProduct = ({ product }) => {
           <p className='ml-28 text-lg border border-slate-900 rounded-md text-center'>price: {price}$</p>
         </div>
         <p className=' mb-4'>{des ? des.slice(0, 100) : 'description not available'}</p>
-        <button className='btn btn-primary hover:bg-slate-800 hover:text-white' onClick={()=>handleOrder(product)}>Order Now</button>
+        <button className='btn hover:bg-slate-800 hover:text-white' onClick={()=>handleOrder(product)}>Order Now</button>
       </div>
     </div>
   );

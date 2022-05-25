@@ -1,9 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home/Home';
 import Navbar from './pages/Home/Navbar/Navbar';
 import Login from './pages/Login/Login';
 import RequireAuth from './pages/Login/RequireAuth';
 import Signup from './pages/Login/Signup/Signup';
+import OrderModal from './pages/Purchase/OrderModal';
 import Purchase from './pages/Purchase/Purchase';
 
 function App() {
@@ -23,6 +25,10 @@ function App() {
           }
         ></Route>
       </Routes>
+
+
+      <OrderModal></OrderModal>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
