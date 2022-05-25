@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const Navbar = () => {
-  // const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
-  // const logout = () => {
-  //   signOut(auth);
-  //   localStorage.removeItem('accessToken');
-  // };
+  const logout = () => {
+    signOut(auth);
+    localStorage.removeItem('accessToken');
+  };
   const menuItems = (
     <>
       <li>
@@ -25,9 +25,13 @@ const Navbar = () => {
       <li>
         <Link to='/blogs'>Blogs</Link>
       </li>
-      <li>
-        <Link to='/login'>Sign in</Link>
-      </li>
+      {
+        user?<li>
+        <button onClick={logout}>{user?.displayName || user?.email.split('@')[1]}</button>
+      </li>:<li>
+      <Link to='/login'>Sign in</Link>
+    </li>
+      }
     </>
   );
   return (

@@ -1,9 +1,9 @@
 import React from 'react';
 
 const SingleProduct = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   const { name, image, des, minQuantity, available, price } = product;
-  console.log(name, image, des, minQuantity, available, price);
+  // console.log(name, image, des, minQuantity, available, price);
   return (
     <div class='card w-96 bg-base-100 shadow-xl'>
       <div class='card-body'>
