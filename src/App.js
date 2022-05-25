@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home/Home';
 import Navbar from './pages/Home/Navbar/Navbar';
 import Login from './pages/Login/Login';
@@ -7,6 +6,8 @@ import RequireAuth from './pages/Login/RequireAuth';
 import Signup from './pages/Login/Signup/Signup';
 import OrderModal from './pages/Purchase/OrderModal';
 import Purchase from './pages/Purchase/Purchase';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (

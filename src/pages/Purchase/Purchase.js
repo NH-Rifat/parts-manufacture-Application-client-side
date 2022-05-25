@@ -97,7 +97,7 @@ const Purchase = () => {
             (quantity>= minQuantity || quantity < available)&& modal?<OrderModal
             product={product}
             quantity={quantity}
-            modal={modal}
+            setModal={setModal}
             ></OrderModal>:''
           }
         </div>

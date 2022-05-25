@@ -3,11 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Loading from '../Shared/Loading/Loading';
 
-const OrderModal = ({ product, quantity,modal }) => {
+const OrderModal = ({ product, quantity,setModal }) => {
   const [user, loading, error] = useAuthState(auth);
   // console.log('modal',product,user);
 
@@ -35,12 +32,13 @@ const OrderModal = ({ product, quantity,modal }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.success) {
-          toast(`order is place successfully for, ${product?.name}`);
+        console.log(data);
+        if (data.insertedId) {
+          toast.success(`order is place successfully for ${product?.name}`);
         } else {
-          toast.error(`'order is not placed' ${product?.name}`);
+          toast.error(`order is not placed ${product?.name}`);
         }
-        modal(false);
+        setModal(false);
       });
   };
   console.log('model', product);
