@@ -15,20 +15,21 @@ const MyProfile = () => {
       location: data.location,
       phone: data.phone,
     };
-    fetch(`http://localhost:5000/user/${user.email}`, {
+    console.log(userData);
+    fetch(`http://localhost:5000/userProfile/${user?.email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify({ userData }),
+      body: JSON.stringify(userData),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.upsertedCount > 0 || data.modifiedCount > 0) {
+        if (data?.upsertedCount > 0 || data?.modifiedCount > 0) {
           toast.success('Your Profile  Updated');
         } else {
-          toast.error('Try Again');
+          toast.error('Please try Again');
         }
       });
   };
