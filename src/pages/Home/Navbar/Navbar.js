@@ -33,7 +33,7 @@ const Navbar = () => {
       {user ? (
         <li>
           <button onClick={logout}>
-            {user?.displayName || user?.email.split('@')[1]}
+            {user?.displayName || user?.email.split('@')[0]}
           </button>
         </li>
       ) : (
