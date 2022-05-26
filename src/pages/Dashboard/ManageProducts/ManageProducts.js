@@ -51,6 +51,11 @@ const ManageProduct = () => {
             </tbody>
           </table>
         </div>
+        {deletingProduct && <DeleteModal
+          deletingProduct={deletingProduct}
+          refetch={refetch}
+          setDeletingProduct={setDeletingProduct}
+      ></DeleteModal>}
       </div>
     </div>
   );

@@ -52,7 +52,7 @@ const AddProduct = () => {
   return (
     <div className='bg-base-200 p-5 mt-3'>
       <h3 className='text-xl text-center '>
-        Add a <span className='text-secondary font-bold'> New Product</span>
+        Add a <span className='text-slate-800 font-bold'> New Product</span>
       </h3>
       <div className='flex items-center justify-center '>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -124,7 +124,7 @@ const AddProduct = () => {
           </div>
 
           <input
-            className='btn btn-secondary w-full text-white'
+            className='btn w-full text-white'
             type='submit'
             value='Add'
           />
