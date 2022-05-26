@@ -23,9 +23,11 @@ const AddProduct = () => {
         //  console.log(result);
         if (result.success) {
           const img = result.data.url;
-          const doctor = {
+          const item = {
             name: data.name,
-            quantity: data.quantity,
+            des: data.description,
+            minQuantity: data.minQuantity,
+            available: data.maxQuantity,
             price: data.price,
             image: img,
           };
@@ -35,7 +37,7 @@ const AddProduct = () => {
               'content-type': 'application/json',
               authorization: `Bearer ${localStorage.getItem('accessToken')}`,
             },
-            body: JSON.stringify(doctor),
+            body: JSON.stringify(item),
           })
             .then((res) => res.json())
             .then((inserted) => {
@@ -72,16 +74,48 @@ const AddProduct = () => {
             />
             <label className='label'></label>
           </div>
+          <div className='form-control w-full max-w-xs'>
+            <label className='label'>
+              <span className='label-text'>Description</span>
+            </label>
+            <input
+              type='text'
+              placeholder='product description'
+              className='input input-bordered w-full max-w-xs'
+              {...register('description', {
+                required: {
+                  value: true,
+                },
+              })}
+            />
+            <label className='label'></label>
+          </div>
 
           <div className='form-control w-full max-w-xs'>
             <label className='label'>
-              <span className='label-text'>Quantity</span>
+              <span className='label-text'>Min quantity</span>
             </label>
             <input
-              type='quantity'
-              placeholder='product quantity'
+              type='text'
+              placeholder='minimum quantity'
               className='input input-bordered w-full max-w-xs'
-              {...register('quantity', {
+              {...register('minQuantity', {
+                required: {
+                  value: true,
+                },
+              })}
+            />
+            <label className='label'></label>
+          </div>
+          <div className='form-control w-full max-w-xs'>
+            <label className='label'>
+              <span className='label-text'>Max quantity</span>
+            </label>
+            <input
+              type='text'
+              placeholder='maximum quantity'
+              className='input input-bordered w-full max-w-xs'
+              {...register('maxQuantity', {
                 required: {
                   value: true,
                 },

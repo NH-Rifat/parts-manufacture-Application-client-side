@@ -47,9 +47,9 @@ const StatusUpdate = ({
         {order?.paid ? (
           <button
             onClick={() => handleChange(order._id, status)}
-            className='btn  bg-gradient-to-r from-accent to-info btn-xs'
+            className='btn btn-slate-800 btn-xs'
           >
-            Update Order
+            place order
           </button>
         ) : (
           <button
