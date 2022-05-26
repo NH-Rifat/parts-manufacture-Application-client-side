@@ -20,6 +20,8 @@ import RequireAdmin from './pages/Login/RequireAdmin';
 import AddProduct from './pages/Dashboard/AddProduct/AddProduct';
 import Footer from './pages/Shared/Footer/Footer';
 import Blog from './pages/Blog/Blog';
+import NoFound from './pages/NotFound/NoFound';
+import Portfolio from './pages/Portfolio/Portfolio';
 
 function App() {
   return (
@@ -83,8 +85,9 @@ function App() {
             }
           ></Route>
         </Route>
+        <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
+        <Route path='*' element={<NoFound></NoFound>}></Route>
       </Routes>
-
       <OrderModal></OrderModal>
       <ToastContainer></ToastContainer>
       <Footer></Footer>

@@ -31,7 +31,7 @@ const AddProduct = () => {
             price: data.price,
             image: img,
           };
-          fetch('http://localhost:5000/addservice', {
+          fetch('https://safe-temple-78272.herokuapp.com/addservice', {
             method: 'POST',
             headers: {
               'content-type': 'application/json',
@@ -157,11 +157,7 @@ const AddProduct = () => {
             <label className='label'></label>
           </div>
 
-          <input
-            className='btn w-full text-white'
-            type='submit'
-            value='Add'
-          />
+          <input className='btn w-full text-white' type='submit' value='Add' />
         </form>
       </div>
     </div>

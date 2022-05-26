@@ -10,7 +10,7 @@ const ManageAllOrder = () => {
   const [updated, setUpdated] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/manageAllOrders', {
+    fetch('https://safe-temple-78272.herokuapp.com/manageAllOrders', {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -23,14 +23,14 @@ const ManageAllOrder = () => {
       });
   }, [updated]);
 
-  console.log('orders from manageOrder',orders);
+  console.log('orders from manageOrder', orders);
 
   const handleChange = (orderId) => {
     const updatestatus = {
       status: 'shipped',
     };
 
-    fetch(`http://localhost:5000/manageOrders/${orderId}`, {
+    fetch(`https://safe-temple-78272.herokuapp.com/manageOrders/${orderId}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -66,9 +66,9 @@ const ManageAllOrder = () => {
             </tr>
           </thead>
           <tbody>
-            {orders?.map((order,index) => (
+            {orders?.map((order, index) => (
               <StatusUpdate
-              index={index+1}
+                index={index + 1}
                 key={order._id}
                 order={order}
                 handleChange={handleChange}

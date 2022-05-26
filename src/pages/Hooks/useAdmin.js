@@ -6,14 +6,12 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`http://localhost:5000/useadmin/${email}`,
-        {
-          method: 'GET',
-          headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-          },
-        }
-      )
+      fetch(`https://safe-temple-78272.herokuapp.com/useadmin/${email}`, {
+        method: 'GET',
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
           setAdmin(data.admin);

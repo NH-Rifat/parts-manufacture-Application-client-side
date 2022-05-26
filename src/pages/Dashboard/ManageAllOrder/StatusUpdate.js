@@ -13,7 +13,7 @@ const StatusUpdate = ({
   const handleDelete = (orderId) => {
     const processed = window.confirm('are you want to delete');
     if (processed) {
-      fetch(`http://localhost:5000/manageOrders/${orderId}`, {
+      fetch(`https://safe-temple-78272.herokuapp.com/manageOrders/${orderId}`, {
         method: 'DELETE',
         headers: {
           authorization: `Bearer ${localStorage.getItem('accessToken')}`,

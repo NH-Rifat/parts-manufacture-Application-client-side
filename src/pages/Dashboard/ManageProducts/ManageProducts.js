@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading/Loading';
-import ProductsRow from './ProductsRow'
-import DeleteModal from './DeleteModal'
+import ProductsRow from './ProductsRow';
+import DeleteModal from './DeleteModal';
 
 const ManageProduct = () => {
   // const [allProduct, setAllProduct] = useState([]);
@@ -13,7 +13,7 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery('products', () =>
-    fetch('http://localhost:5000/manageservice', {
+    fetch('https://safe-temple-78272.herokuapp.com/manageservice', {
       headers: {
         authorization: `Bearer ${localStorage.getItem('accessToken')}`,
       },
@@ -51,11 +51,13 @@ const ManageProduct = () => {
             </tbody>
           </table>
         </div>
-        {deletingProduct && <DeleteModal
-          deletingProduct={deletingProduct}
-          refetch={refetch}
-          setDeletingProduct={setDeletingProduct}
-      ></DeleteModal>}
+        {deletingProduct && (
+          <DeleteModal
+            deletingProduct={deletingProduct}
+            refetch={refetch}
+            setDeletingProduct={setDeletingProduct}
+          ></DeleteModal>
+        )}
       </div>
     </div>
   );

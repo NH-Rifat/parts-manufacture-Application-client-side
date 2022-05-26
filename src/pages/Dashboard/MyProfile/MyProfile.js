@@ -16,13 +16,16 @@ const MyProfile = () => {
       phone: data.phone,
     };
     console.log(userData);
-    fetch(`http://localhost:5000/userProfile/${user?.email}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    })
+    fetch(
+      `https://safe-temple-78272.herokuapp.com/userProfile/${user?.email}`,
+      {
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -100,7 +103,7 @@ const MyProfile = () => {
                   <input
                     className='btn btn-slate-700 p-6 w-full max-w-xs text-white'
                     type='submit'
-                    value='Review'
+                    value='Update Profile'
                   />
                 </div>
               </form>

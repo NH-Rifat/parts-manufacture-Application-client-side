@@ -26,7 +26,7 @@ const OrderModal = ({ product, quantity, setModal }) => {
       status: 'pending',
     };
     // console.log(order);
-    fetch('http://localhost:5000/order', {
+    fetch('https://safe-temple-78272.herokuapp.com/order', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

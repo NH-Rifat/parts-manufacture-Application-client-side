@@ -13,7 +13,7 @@ const AddReview = () => {
       userEmail: user?.email,
       ...data,
     };
-    fetch('http://localhost:5000/review', {
+    fetch('https://safe-temple-78272.herokuapp.com/review', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

@@ -10,7 +10,7 @@ const Purchase = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(0);
-  const [modal,setModal] = useState(true,)
+  const [modal, setModal] = useState(true);
 
   const [user] = useAuthState(auth);
   // console.log(user);
@@ -24,7 +24,7 @@ const Purchase = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/item/${productId}`)
+    fetch(`https://safe-temple-78272.herokuapp.com/item/${productId}`)
       .then((res) => res.json())
       .then((data) => {
         setQuantity(data.minQuantity);
@@ -43,7 +43,10 @@ const Purchase = () => {
         </figure>
       </div>
       <div className=''>
-        <h1 className='text-3xl mt-3 mb-3'>Hello, <span className='font-semibold'>{user?.displayName}</span> Please Order your desire Product</h1>
+        <h1 className='text-3xl mt-3 mb-3'>
+          Hello, <span className='font-semibold'>{user?.displayName}</span>{' '}
+          Please Order your desire Product
+        </h1>
         <h1 className='text-5xl mb-3'>{name}</h1>
         <p className='text-3xl font-semibold'>
           Price: <span className='text-slate-700 font-normal'>${price}</span>
@@ -70,16 +73,18 @@ const Purchase = () => {
               +
             </button>
           )}
-          <label  for='my-modal-3' className='btn ml-8'>
+          <label for='my-modal-3' className='btn ml-8'>
             order now
           </label>
-          {
-            (quantity>= minQuantity || quantity < available)&& modal?<OrderModal
-            product={product}
-            quantity={quantity}
-            setModal={setModal}
-            ></OrderModal>:''
-          }
+          {(quantity >= minQuantity || quantity < available) && modal ? (
+            <OrderModal
+              product={product}
+              quantity={quantity}
+              setModal={setModal}
+            ></OrderModal>
+          ) : (
+            ''
+          )}
         </div>
       </div>
     </div>

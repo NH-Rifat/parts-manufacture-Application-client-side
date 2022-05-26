@@ -11,12 +11,15 @@ const MyOrders = () => {
   const [myOrders, setMyOrders] = useState([]);
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/orders?email=${user.email}`, {
-        method: 'GET',
-        headers: {
-          authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-        },
-      })
+      fetch(
+        `https://safe-temple-78272.herokuapp.com/orders?email=${user.email}`,
+        {
+          method: 'GET',
+          headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+          },
+        }
+      )
         .then((res) => {
           // console.log('res',res);
           if (res.status === 401 || res.status === 403) {
@@ -36,7 +39,7 @@ const MyOrders = () => {
   const orderDelete = (id) => {
     const processed = window.confirm('Do you want to delete the product?');
     if (processed) {
-      fetch(`http://localhost:5000/deleteOrder/${id}`, {
+      fetch(`https://safe-temple-78272.herokuapp.com/deleteOrder/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())

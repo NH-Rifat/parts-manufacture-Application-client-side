@@ -15,7 +15,7 @@ console.log('stripePromise', stripePromise);
 const Payment = () => {
   const { id } = useParams();
   const { data: order, isLoading } = useQuery(['order', id], () =>
-    fetch(`http://localhost:5000/order/${id}`, {
+    fetch(`https://safe-temple-78272.herokuapp.com/order/${id}`, {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('accessToken')}`,
