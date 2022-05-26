@@ -6,7 +6,7 @@ import Summary from './Summary/Summary';
 
 const Home = () => {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto p-7'>
       <Banner></Banner>
       <Products></Products>
       <Summary></Summary>

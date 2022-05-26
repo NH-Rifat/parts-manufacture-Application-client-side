@@ -35,11 +35,11 @@ const DeleteModal = ({ deletingProduct, refetch, setDeletingProduct }) => {
           <div className='modal-action'>
             <button
               onClick={() => handleDelete()}
-              className='btn btn-xs btn-error'
+              className='btn btn-xs btn-slate-700'
             >
               Delete
             </button>
-            <label for='delete-modal' className='btn btn-xs'>
+            <label for='delete-modal' className='btn btn-xs btn-slate-700'>
               Cancel
             </label>
           </div>

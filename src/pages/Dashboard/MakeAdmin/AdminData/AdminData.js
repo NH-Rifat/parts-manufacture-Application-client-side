@@ -1,6 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
-const AdminRow = ({ user, refetch }) => {
+const AdminRow = ({ user, refetch, index }) => {
   const { email, role } = user;
   // console.log('user', email,role);
   const makeAdmin = () => {
@@ -24,20 +24,26 @@ const AdminRow = ({ user, refetch }) => {
         }
       });
   };
+  const handleDelete = () => {
+    // console.log('delete user');
+    toast.info('Working in progress');
+  };
   return (
     <tr>
-      <th></th>
+      <th>{index + 1}</th>
       <td>{email}</td>
       <td>
         {role !== 'admin' && (
-          <button onClick={makeAdmin} className='btn btn-xs'>
+          <button onClick={makeAdmin} className='btn btn-sm'>
             Make Admin
           </button>
         )}
       </td>
       <td>
         {role !== 'admin' && (
-          <button className='btn btn-error btn-xs'>Delete</button>
+          <button onClick={handleDelete} className='btn btn-slate-700 btn-sm'>
+            Delete
+          </button>
         )}
       </td>
     </tr>

@@ -18,10 +18,11 @@ import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
 import ManageAllOrder from './pages/Dashboard/ManageAllOrder/ManageAllOrder';
 import RequireAdmin from './pages/Login/RequireAdmin';
 import AddProduct from './pages/Dashboard/AddProduct/AddProduct';
+import Footer from './pages/Shared/Footer/Footer';
 
 function App() {
   return (
-    <div className='container mx-auto'>
+    <div className='bg-slate-100'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -84,6 +85,7 @@ function App() {
 
       <OrderModal></OrderModal>
       <ToastContainer></ToastContainer>
+      <Footer></Footer>
     </div>
   );
 }

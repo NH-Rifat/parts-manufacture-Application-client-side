@@ -25,7 +25,7 @@ const ManageAllOrder = () => {
 
   console.log('orders from manageOrder',orders);
 
-  const handleChange = (orderId, status) => {
+  const handleChange = (orderId) => {
     const updatestatus = {
       status: 'shipped',
     };
@@ -42,7 +42,7 @@ const ManageAllOrder = () => {
       .then((data) => {
         setUpdated(!updated);
         setStatus('shipped');
-        console.log(data);
+        // console.log(data);
       });
   };
 

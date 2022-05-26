@@ -9,7 +9,7 @@ const StatusUpdate = ({
   setUpdated,
   updated,
 }) => {
-  console.log('order from status update',order);
+  console.log('order from status update', order);
   const handleDelete = (orderId) => {
     const processed = window.confirm('are you want to delete');
     if (processed) {
@@ -32,13 +32,13 @@ const StatusUpdate = ({
   return (
     // {status==='shipped'?"shipped":"pending"}
     <tr>
-      <th>{index}</th>
+      <th></th>
       <td>{order?.product}</td>
       <td>{order?.price}</td>
       <td>{order?.userName}</td>
       <td>
-        {order.paid ? (
-          <span className='text-green-500 text-xl'>{order.status}</span>
+        {order?.paid ? (
+          <span className='text-green-500 text-xl'>{order?.status}</span>
         ) : (
           <span className='text-red-500 text-xl'>unpaid</span>
         )}

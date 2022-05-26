@@ -21,8 +21,9 @@ const OrderModal = ({ product, quantity, setModal }) => {
       userName: user?.displayName,
       phone,
       address,
-      price:product?.price,
-      quantity
+      price: product?.price,
+      quantity,
+      status:"pending",
     };
     // console.log(order);
     fetch('http://localhost:5000/order', {

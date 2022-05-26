@@ -23,7 +23,7 @@ const MakeAdmin = () => {
   return (
     <div>
       <h3 className='text-xl'>
-        All Users: <span className='text-secondary'>{users?.length}</span>
+        All Users: <span className='text-slate-900 font-semibold'>{users?.length}</span>
       </h3>
       <div className='overflow-x-auto'>
         <table className='table w-full'>
@@ -36,11 +36,12 @@ const MakeAdmin = () => {
             </tr>
           </thead>
           <tbody>
-            {users?.map((user) => (
+            {users?.map((user,index) => (
               <AdminData
                 key={user._id}
                 user={user}
                 refetch={refetch}
+                index={index}
               ></AdminData>
             ))}
           </tbody>

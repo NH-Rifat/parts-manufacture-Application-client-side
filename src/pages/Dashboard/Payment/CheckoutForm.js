@@ -1,7 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
-const Checkout = ({ order }) => {
+const CheckoutForm = ({ order }) => {
   const stripe = useStripe();
   const element = useElements();
 
@@ -12,10 +12,10 @@ const Checkout = ({ order }) => {
   const [processing, setProcessing] = useState(false);
   const [clientSecret, setClientSecret] = useState('');
 
-  const { _id, product, price, client, clientName } = order;
+  const { _id, product, price, userEmail, userName } = order;
 
   useEffect(() => {
-    fetch('https://fast-spire-01070.herokuapp.com/create-payment-intent', {
+    fetch('http://localhost:5000/create-payment-intent', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -26,7 +26,7 @@ const Checkout = ({ order }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data?.clientSecret) {
-          console.log(data);
+          // console.log('client secret from data',data);
           setClientSecret(data.clientSecret);
         }
       });
@@ -54,8 +54,8 @@ const Checkout = ({ order }) => {
         payment_method: {
           card: card,
           billing_details: {
-            name: clientName,
-            email: client,
+            name: userName,
+            email: userEmail,
           },
         },
       });
@@ -73,7 +73,7 @@ const Checkout = ({ order }) => {
         order: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://fast-spire-01070.herokuapp.com/order/${_id}`, {
+      fetch(`http://localhost:5000/order/${_id}`, {
         method: 'PATCH',
         headers: {
           'content-type': 'application/json',
@@ -89,7 +89,7 @@ const Checkout = ({ order }) => {
     }
   };
   return (
-    <>
+    <div className=''>
       <form onSubmit={handleSubmit}>
         <CardElement
           options={{
@@ -108,7 +108,7 @@ const Checkout = ({ order }) => {
           }}
         />
         <button
-          className='btn btn-success btn-sm mt-4'
+          className='btn btn-sm mt-4'
           type='submit'
           disabled={!stripe || !clientSecret}
         >
@@ -125,8 +125,8 @@ const Checkout = ({ order }) => {
           </p>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
-export default Checkout;
+export default CheckoutForm;

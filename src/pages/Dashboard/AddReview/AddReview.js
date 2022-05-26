@@ -32,10 +32,10 @@ const AddReview = () => {
   };
   return (
     <div>
-      <h1 className='text-center my-3'>
-        Write <span className='text-secondary'>Review</span>
+      <h1 className='text-center my-3 text-3xl font-semibold'>
+        Write <span className='text-slate-700'>Your Review</span>
       </h1>
-      <div className='hero min-h-screen bg-base-200'>
+      <div className='hero p-24 bg-base-200'>
         <div className='hero-content '>
           <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
             <div className='card-body'>
@@ -70,7 +70,7 @@ const AddReview = () => {
                 </div>
                 <div className='form-control mt-6'>
                   <input
-                    className='btn btn-secondary p-6 w-full max-w-xs text-white'
+                    className='btn btn-slate-700 p-6 w-full max-w-xs text-white'
                     type='submit'
                     value='Review'
                   />

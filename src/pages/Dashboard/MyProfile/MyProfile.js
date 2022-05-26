@@ -35,8 +35,8 @@ const MyProfile = () => {
   };
   return (
     <div>
-      <h1 className='text-center font-bold my-3'>
-        My <span className='text-secondary'>ProFile</span>
+      <h1 className='text-center font-semibold my-3 text-3xl'>
+        My <span className='text-slate-700 '>ProFile</span>
       </h1>
       <div className='hero min-h-screen bg-base-200'>
         <div className='hero-content '>
@@ -98,7 +98,7 @@ const MyProfile = () => {
                 </div>
                 <div className='form-control mt-6'>
                   <input
-                    className='btn btn-secondary p-6 w-full max-w-xs text-white'
+                    className='btn btn-slate-700 p-6 w-full max-w-xs text-white'
                     type='submit'
                     value='Review'
                   />

@@ -51,10 +51,14 @@ const MyOrders = () => {
   };
 
   return (
-    <div>
+    <div className=''>
       <div className='mb-3 mt-6'>
-        <h2 className='mb-2 text-xl'>
-          My <span className='text-secondary'>Orders:{myOrders.length}</span>
+        <h2 className='mb-2 text-xl text-2xl font-semibold'>
+          My total
+          <span className='text-slate-700'>
+            {' '}
+            Ordered items :{myOrders.length}
+          </span>
         </h2>
         <hr />
       </div>
@@ -79,14 +83,16 @@ const MyOrders = () => {
                   <td>{order?.price}</td>
                   <td>
                     {order?.price && !order?.paid && (
-                      <Link to={`/dashboard/payment/${order._id}`}>
-                        <button className='btn btn-xs btn-success'>pay</button>
+                      <Link to={`/dashboard/payment/${order?._id}`}>
+                        <button className='btn btn-sm btn-slate-700'>
+                          pay
+                        </button>
                       </Link>
                     )}
-                    {order.price && order.paid && (
+                    {order?.price && order?.paid && (
                       <div>
                         <p>
-                          <span className='text-green-500'>Paid</span>
+                          <span className='text-slate-700'>Paid</span>
                         </p>
                         <p>
                           Transaction id:{' '}
