@@ -19,6 +19,7 @@ import ManageAllOrder from './pages/Dashboard/ManageAllOrder/ManageAllOrder';
 import RequireAdmin from './pages/Login/RequireAdmin';
 import AddProduct from './pages/Dashboard/AddProduct/AddProduct';
 import Footer from './pages/Shared/Footer/Footer';
+import Blog from './pages/Blog/Blog';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route
           path='/purchase/:productId'
           element={
