@@ -18,7 +18,7 @@ const MakeAdmin = () => {
     }).then((res) => res.json())
   );
   if (isLoading) {
-    return <Loading />;
+    return <Loading></Loading>
   }
   return (
     <div>

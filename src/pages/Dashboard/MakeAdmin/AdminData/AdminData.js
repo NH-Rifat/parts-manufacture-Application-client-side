@@ -1,5 +1,5 @@
 import React from 'react';
-import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
 const AdminRow = ({ user, refetch }) => {
   const { email, role } = user;
   const makeAdmin = () => {
