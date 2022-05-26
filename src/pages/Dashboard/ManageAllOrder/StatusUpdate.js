@@ -1,7 +1,15 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const StatusUpdate = ({ order, status,index, handleChange, setUpdated, updated }) => {
+const StatusUpdate = ({
+  order,
+  status,
+  index,
+  handleChange,
+  setUpdated,
+  updated,
+}) => {
+  console.log('order from status update',order);
   const handleDelete = (orderId) => {
     const processed = window.confirm('are you want to delete');
     if (processed) {

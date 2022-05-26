@@ -23,12 +23,14 @@ const ManageAllOrder = () => {
       });
   }, [updated]);
 
+  console.log('orders from manageOrder',orders);
+
   const handleChange = (orderId, status) => {
     const updatestatus = {
       status: 'shipped',
     };
 
-    fetch(`http://localhost:5000/manageAllOrders/${orderId}`, {
+    fetch(`http://localhost:5000/manageOrders/${orderId}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
