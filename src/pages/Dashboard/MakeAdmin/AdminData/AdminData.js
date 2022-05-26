@@ -2,6 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 const AdminRow = ({ user, refetch }) => {
   const { email, role } = user;
+  // console.log('user', email,role);
   const makeAdmin = () => {
     fetch(`http://localhost:5000/user/admin/${email}`, {
       method: 'PUT',
@@ -18,7 +19,7 @@ const AdminRow = ({ user, refetch }) => {
       .then((data) => {
         if (data.modifiedCount > 0) {
           refetch();
-          console.log(data);
+          // console.log(data);
           toast.success('Successfully make an admin');
         }
       });
