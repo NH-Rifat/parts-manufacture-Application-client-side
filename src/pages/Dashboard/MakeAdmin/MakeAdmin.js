@@ -18,7 +18,7 @@ const MakeAdmin = () => {
     }).then((res) => res.json())
   );
   if (isLoading) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
   return (
     <div>
@@ -37,7 +37,11 @@ const MakeAdmin = () => {
           </thead>
           <tbody>
             {users?.map((user) => (
-              <AdminData key={user._id} user={user} refetch={refetch}></AdminData>
+              <AdminData
+                key={user._id}
+                user={user}
+                refetch={refetch}
+              ></AdminData>
             ))}
           </tbody>
         </table>
