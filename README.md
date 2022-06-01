@@ -4,7 +4,7 @@ This is a car manufacturing web application where user can manage his/her car pr
 
 ## Available links
 
-Project live link [https://car-manufacturing-e90c4.web.app/](https://car-manufacturing-e90c4.web.app/).
+live link [https://car-manufacturing-e90c4.web.app/](https://car-manufacturing-e90c4.web.app/).
 
 ## Application Feature
 
